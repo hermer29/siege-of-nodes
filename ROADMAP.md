@@ -1,0 +1,47 @@
+# Roadmap
+
+- [ ] 1. Настроить CMake-проект и vcpkg (glfw3, glad, glm, catch2).
+- [ ] 2. Создать базовую структуру каталогов (`core/`, `gameplay/`, `render/`, `tools/`, `tests/`).
+- [ ] 3. Реализовать класс `Window` и инициализацию OpenGL через GLFW + GLAD.
+- [ ] 4. Написать класс `ShaderProgram` с загрузкой и компиляцией vertex/fragment шейдеров.
+- [ ] 5. Отрисовать первый треугольник или quad на экране (этап 0 — «Hello, GPU»).
+- [ ] 6. Добавить hot-reload шейдеров при изменении `.vert` / `.frag` файлов.
+- [ ] 7. Реализовать класс `Renderer` (RAII, инкапсуляция GL-состояния).
+- [ ] 8. Сгенерировать процедурный граф карты (adjacency list) для уровня.
+- [ ] 9. Реализовать DFS/stack для генерации лабиринта или связного графа.
+- [ ] 10. Добавить визуализацию графа узлов (instanced rendering тайлов).
+- [ ] 11. Реализовать A* / Dijkstra для поиска пути по графу.
+- [ ] 12. Создать сущность `Enemy` и движение по найденному пути к ядру.
+- [ ] 13. Реализовать собственный `BinaryHeap` в `core/containers/`.
+- [ ] 14. Написать юнит-тесты для `BinaryHeap` (push, pop, decrease-key).
+- [ ] 15. Построить `EventQueue` симуляции на базе min-heap (спавн, таймеры).
+- [ ] 16. Реализовать fixed tick simulation (`dt = 1/60`) отдельно от render loop.
+- [ ] 17. Реализовать собственный `HashMap` (open addressing или chaining).
+- [ ] 18. Написать юнит-тесты и бенчмарк `HashMap` против `std::unordered_map`.
+- [ ] 19. Добавить `EntityRegistry`: `EntityId → Component` через свой hash map.
+- [ ] 20. Реализовать `ObjectPool` + intrusive list для снарядов и частиц.
+- [ ] 21. Реализовать `RingBuffer` для очереди команд игрока.
+- [ ] 22. Ввести интерфейс `ITowerBehavior` и 2–3 реализации башен (Strategy).
+- [ ] 23. Добавить выбор цели для башен (quadtree или spatial hash).
+- [ ] 24. Реализовать FSM врага: Patrol → Chase → Attack → Flee (State).
+- [ ] 25. Добавить систему волн и спавна врагов через `EventQueue`.
+- [ ] 26. Реализовать double buffering игрового состояния (sim write / render read).
+- [ ] 27. Вынести simulation в отдельный поток с mutex или lock-free queue.
+- [ ] 28. Реализовать `JobSystem` (thread pool) для batch pathfinding.
+- [ ] 29. Добавить deferred pathfinding — враг не ждёт пересчёта пути в кадре.
+- [ ] 30. Реализовать async загрузку уровня через `std::future` или C++20 coroutines.
+- [ ] 31. Добавить loader thread для текстур и компиляции шейдеров.
+- [ ] 32. Написать vertex shader: instancing, пульсация узлов (`u_time`).
+- [ ] 33. Написать fragment shader: influence map (heatmap угрозы).
+- [ ] 34. Написать fragment shader: отображение радиуса башни (`smoothstep`).
+- [ ] 35. Добавить post-process: vignette при низком HP ядра.
+- [ ] 36. Добавить post-process: outline башен (Sobel по id/depth buffer).
+- [ ] 37. Реализовать Observer для игровых событий (волна, урон ядра) → UI/звук.
+- [ ] 38. Добавить Factory + Registry для создания башен из JSON-конфига.
+- [ ] 39. Реализовать BFS / flood fill для зон аур и эффектов башен.
+- [ ] 40. Добавить sweep & prune или spatial hash для broadphase снарядов.
+- [ ] 41. Ввести topological sort порядка систем (баффы → урон → смерть).
+- [ ] 42. Реализовать процедурный генератор уровней в `tools/level_gen/`.
+- [ ] 43. Добавить UI между волнами (выбор улучшений, статистика).
+- [ ] 44. Покрыть ключевые алгоритмы интеграционными тестами (pathfinding, event queue).
+- [ ] 45. Профилирование и оптимизация hot paths (pool, spatial, job system).
