@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] 1. Настроить CMake-проект и vcpkg (glfw3, glad, glm, catch2).
+- [x] 1. Настроить CMake-проект и vcpkg (glfw3, glad, glm, catch2).
 - [ ] 2. Создать базовую структуру каталогов (`core/`, `gameplay/`, `render/`, `tools/`, `tests/`).
 - [ ] 3. Реализовать класс `Window` и инициализацию OpenGL через GLFW + GLAD.
 - [ ] 4. Написать класс `ShaderProgram` с загрузкой и компиляцией vertex/fragment шейдеров.
