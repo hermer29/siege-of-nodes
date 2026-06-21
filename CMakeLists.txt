@@ -16,10 +16,12 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 
-file(GLOB hdrs "src/*.hpp")
-file(GLOB srcs "src/*.cpp")
+file(GLOB_RECURSE srcs CONFIGURE_DEPENDS "src/*.cpp")
+file(GLOB_RECURSE hdrs CONFIGURE_DEPENDS "src/*.hpp")
 
-add_executable(siege_of_nodes ${srcs} ${hdrs}) 
+add_executable(siege_of_nodes ${srcs} ${hdrs})
+
+target_include_directories(siege_of_nodes PRIVATE src)
 
 
 target_link_libraries(siege_of_nodes PRIVATE 
