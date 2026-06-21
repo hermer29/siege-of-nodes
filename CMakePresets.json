@@ -15,7 +15,8 @@
           "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
           "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Debug",
-            "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic"
+            "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
+            "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
           }
         }
       ],
